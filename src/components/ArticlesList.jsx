@@ -11,6 +11,8 @@ function ArticlesList (props) {
                         <p>{article.author}</p>
                         <p>{article.topic}</p>
                         <p>{article.created_at.split('T')[0]} at {article.created_at.split('T')[1].split('.')[0]}</p>
+                        <p>comments: {article.comment_count}</p>
+                        <p>likes: {article.votes}</p>
                         <img src={article.article_img_url} alt="This is the article image" />
                     </li>
                 )
