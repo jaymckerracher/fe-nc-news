@@ -1,4 +1,33 @@
 /* general styling */
 * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
     font-family: verdana, arial, helvetica, sans-serif;
+}
+
+header {
+    height: 10vh;
+}
+
+header h1 {
+    display: inline;
+    font-size: 2.5rem;
+}
+
+header img {
+    height: 100%;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+}
+
+/* Header */
+
+/* Footer */
+
+ul img {
+    width: 50vw;
 }
