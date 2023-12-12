@@ -1,20 +1,19 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
+
+import { getArticles } from '../utils/api';
 
 import ArticlesList from "./ArticlesList";
 
 function Home () {
-    const [articlesRequest, setArticlesRequest] = useState('https://jay-mckerracher-nc-news.onrender.com/api/articles') // link for axios
-    const [articlesList, setArticlesList] = useState([]) // articles array that is rendered
-    const [isLoading, setIsLoading] = useState(false) // loading flag
+    const [articlesRequest, setArticlesRequest] = useState('https://jay-mckerracher-nc-news.onrender.com/api/articles')
+    const [articlesList, setArticlesList] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        setIsLoading(true)
-        axios
-            .get(articlesRequest)
-            .then(res => {
-            setArticlesList(res.data.articles)
-            setIsLoading(false)
+        getArticles(articlesRequest)
+            .then(body => {
+                setArticlesList(body)
+                setIsLoading(false)
         })
     }, [])
 
