@@ -1,6 +1,6 @@
-function ArticleCard ({article, isLoading}) {
-    if (isLoading) {
-        return <p>Loading...</p>
+function ArticleCard ({article, isArticleLoading}) {
+    if (isArticleLoading) {
+        return <p>Article Loading...</p>
     }
     return (
         <div id='card-container'>
