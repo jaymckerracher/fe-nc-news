@@ -5,16 +5,15 @@ import ArticlesList from "./ArticlesList";
 
 function Home () {
     const [articlesRequest, setArticlesRequest] = useState('https://jay-mckerracher-nc-news.onrender.com/api/articles') // link for axios
-    const [articlesList, setArticlesList] = useState([]) // articles array that is rendered
-    const [isLoading, setIsLoading] = useState(false) // loading flag
+    const [articlesList, setArticlesList] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        setIsLoading(true)
         axios
             .get(articlesRequest)
             .then(res => {
-            setArticlesList(res.data.articles)
-            setIsLoading(false)
+                setArticlesList(res.data.articles)
+                setIsLoading(false)
         })
     }, [])
 
