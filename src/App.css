@@ -2,32 +2,89 @@
 * {
     padding: 0;
     margin: 0;
+    color: #fdfcf7;
     box-sizing: border-box;
     font-family: verdana, arial, helvetica, sans-serif;
-    color: #fdfcf7;
+    text-decoration: none;
 }
 
 body {
     background-color: #22272C;
 }
 
+.icon {
+    color: blue;
+    font-size: 1.5em;
+}
+
+.loading {
+    display: block;
+    text-align: center;
+    margin: 10px;
+}
+
+/* Error */
+.error-container {
+    z-index: 1;
+    background-color: #22272C;
+    border: 2px solid rgb(153, 22, 22);
+    border-radius: 15px;
+    width: 400px;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.error-container h1 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 10px;
+}
+
+.error-container p {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.show-error {
+    display: block;
+}
+
+.hide-error {
+    display: none;
+}
+
 /* Header */
 .app-header {
-    height: 10vh;
-    padding: 3% 6%;
+    height: 90px;
     background-color: #2E343C;
+    border-bottom: #22272C solid 3px;
+    border-radius: 0 0 15px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.header-content-container {
+    height: 80%;
+    width: 380px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 0 0 15px 15px;
 }
 
 .app-header h1 {
-    font-size: 8vw;
+    font-size: 2.5rem;
     font-family: georgia, verdana, arial, sans-serif;
     padding: 5px 15px;
     border: #fdfcf7 solid 2px;
     border-radius: 15px;
+    width: 250px;
+    text-align: center;
 }
 
 .app-header img {
@@ -36,10 +93,66 @@ body {
 
 /* Footer */
 footer {
-    position: fixed;
+    height: 90px;
+    width: 100%;
+    background-color: #2E343C;
+    border-top: #22272C solid 3px;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
     bottom: 0;
 }
 
-ul img {
-    width: 50vw;
+/* ArticleCard */
+.card {
+    border-radius: 15px;
+    width: 90%;
+    margin: 30px auto;
+    background-color: #2E343C;
+    padding: 20px;
+}
+
+.card img {
+    width: 90%;
+    display: block;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+
+.card h3 {
+    margin: 20px 0;
+    font-style: italic;
+}
+
+.card h3 span {
+    border: #fdfcf7 solid 2px;
+    border-radius: 10px;
+    padding: 4px 7px;
+}
+
+.card p {
+    margin: 20px 0;
+}
+
+.like-comment-container-article {
+    margin: auto;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.like-container-comment {
+    width: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.author-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
