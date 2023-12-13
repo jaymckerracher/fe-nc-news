@@ -1,16 +1,15 @@
+import CommentCard from "./CommentCard"
+
 function CommentsList ({commentsList, isCommentsLoading}) {
     if(isCommentsLoading) {
-        return <p>Comments Loading...</p>
+        return <p className="loading">Comments Loading...</p>
     }
     else {
         return (
             <ul>
                 {commentsList.map(comment => {
                     return <li key={comment.comment_id}>
-                        <p>{comment.author}</p>
-                        <p>{comment.created_at}</p>
-                        <p>{comment.body}</p>
-                        <p>{comment.votes}</p>
+                        <CommentCard comment={comment}/>
                     </li>
                 })}
             </ul>

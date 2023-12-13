@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 import { getArticleById, getCommentsByArticle } from "../utils/api";
 
-import ArticleCard from "./ArticleCard";
+import SingleArticleCard from "./SingleArticleCard";
 import CommentsList from "./CommentsList";
 import CommentAdder from "./CommentAdder";
 
@@ -33,7 +33,7 @@ function Article () {
 
     return (
         <>
-            <ArticleCard article={article} isArticleLoading={isArticleLoading}/>
+            <SingleArticleCard article={article} isArticleLoading={isArticleLoading}/>
             <CommentsList commentsList={commentsList} isCommentsLoading={isCommentsLoading}/>
             <CommentAdder />
         </>

@@ -1,14 +1,14 @@
-import ArticlesListCard from "./ArticlesListCard"
+import ArticleCard from "./ArticleCard"
 
 function ArticlesList ({articlesList, isLoading}) {
     if(isLoading) {
-        return <p>Loading...</p>
+        return <p className="loading">Loading...</p>
     }
     return (
         <ul>
             {articlesList.map(article => {
                 return <li key={article.article_id}>
-                    <ArticlesListCard article={article}/>
+                    <ArticleCard article={article}/>
                 </li>
             })}
         </ul>

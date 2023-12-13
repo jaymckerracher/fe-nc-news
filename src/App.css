@@ -17,6 +17,45 @@ body {
     font-size: 1.5em;
 }
 
+.loading {
+    display: block;
+    text-align: center;
+    margin: 10px;
+}
+
+/* Error */
+.error-container {
+    z-index: 1;
+    background-color: #22272C;
+    border: 2px solid rgb(153, 22, 22);
+    border-radius: 15px;
+    width: 400px;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.error-container h1 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 10px;
+}
+
+.error-container p {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.show-error {
+    display: block;
+}
+
+.hide-error {
+    display: none;
+}
+
 /* Header */
 .app-header {
     height: 90px;
@@ -62,11 +101,11 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    position: sticky;
     bottom: 0;
 }
 
-/* ArticlesListCard */
+/* ArticleCard */
 .card {
     border-radius: 15px;
     width: 90%;
@@ -83,10 +122,21 @@ footer {
 }
 
 .card h3 {
-    margin: 10px 0;
+    margin: 20px 0;
+    font-style: italic;
 }
 
-.like-comment-container {
+.card h3 span {
+    border: #fdfcf7 solid 2px;
+    border-radius: 10px;
+    padding: 4px 7px;
+}
+
+.card p {
+    margin: 20px 0;
+}
+
+.like-comment-container-article {
     margin: auto;
     width: 50%;
     display: flex;
@@ -94,7 +144,14 @@ footer {
     align-items: center;
 }
 
-.card-line-1 {
+.like-container-comment {
+    width: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.author-date {
     display: flex;
     justify-content: space-between;
     align-items: center;
