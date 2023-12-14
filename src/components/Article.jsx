@@ -33,7 +33,7 @@ function Article () {
     return (
         <>
             <SingleArticleCard article={article} isArticleLoading={isArticleLoading}/>
-            <CommentsList commentsList={commentsList} isCommentsLoading={isCommentsLoading}/>
+            <CommentsList commentsList={commentsList} setCommentsList={setCommentsList} isCommentsLoading={isCommentsLoading} article_id={article_id}/>
         </>
     )
 }

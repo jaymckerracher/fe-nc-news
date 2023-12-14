@@ -42,4 +42,16 @@ function getUsers () {
         })
 }
 
-export { getArticleById, getArticles, getCommentsByArticle, patchArticleVotes, getUsers };
+function postComment (article_id, username, body) {
+    const comment = {
+            username: username,
+            body: body
+        }
+    return axios
+        .post(`https://jay-mckerracher-nc-news.onrender.com/api/articles/${article_id}/comments`, comment)
+        .then(res => {
+            return res.data.comment;
+        })
+}
+
+export { getArticleById, getArticles, getCommentsByArticle, patchArticleVotes, getUsers, postComment };

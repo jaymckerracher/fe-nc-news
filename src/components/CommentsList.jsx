@@ -1,14 +1,16 @@
 import CommentCard from "./CommentCard"
 import CommentAdder from "./CommentAdder";
 
-function CommentsList ({commentsList, isCommentsLoading}) {
+import { useState } from "react";
+
+function CommentsList ({commentsList, setCommentsList, isCommentsLoading, article_id}) {
     if(isCommentsLoading) {
         return <p className="loading">Comments Loading...</p>
     }
     else {
         return (
             <>
-                <CommentAdder/>
+                <CommentAdder article_id={article_id} setCommentsList={setCommentsList} commentsList={commentsList}/>
                 <ul>
                     {commentsList.map(comment => {
                         return <li key={comment.comment_id}>
