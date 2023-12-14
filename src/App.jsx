@@ -7,6 +7,8 @@ import Footer from './components/Footer'
 import Home from './components/Home'
 import Article from './components/Article'
 import Error from './components/Error'
+import Profile from './components/Profile'
+import SignIn from './components/SignIn'
 
 function App() {
   const {errorClass, setErrorClass} = useState('error-container hide-error')
@@ -18,6 +20,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/articles/:article_id' element={<Article />}/>
+        <Route path='/profile' element={<Profile/>}></Route>
+        <Route path='/login' element={<SignIn />}></Route>
       </Routes>
       <Footer />
     </>

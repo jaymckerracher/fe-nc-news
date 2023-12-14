@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useState, useContext } from "react"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -7,12 +7,15 @@ import { faHeart as regularHeart, faComment } from '@fortawesome/free-regular-sv
 
 import { patchArticleVotes } from "../utils/api"
 import { ErrorMessageContext, ErrorClassContext } from "../contexts/ErrorContext"
+import { UserContext } from "../contexts/UserContext"
 
 function ArticleCard ({article}) {
     const [newVotes, setNewVotes] = useState(0)
     const [currentHeart, setCurrentHeart] = useState(regularHeart)
     const {errorMessage, setErrorMessage} = useContext(ErrorMessageContext)
     const {errorClass, setErrorClass} = useContext(ErrorClassContext)
+    const {user, setUser} = useContext(UserContext)
+    const navigate = useNavigate();
 
     function addLike (num) {
         setNewVotes(newVotes + num)
@@ -41,7 +44,15 @@ function ArticleCard ({article}) {
                     <span>
                         <FontAwesomeIcon icon={currentHeart} className="icon" onClick={(event) => {
                             event.preventDefault();
-                            if (currentHeart === regularHeart) {
+                            if(!user.username) {
+                                navigate('/login');
+                                setErrorMessage('You must be signed in to like a post')
+                                    setErrorClass("error-container show-error")
+                                    setTimeout(() => {
+                                        setErrorClass("error-container hide-error")
+                                    }, 10000)
+                            }
+                            else if (currentHeart === regularHeart) {
                                 patchArticleVotes(article.article_id, 1)
                                 .catch(() => {
                                     removeLike(0)
