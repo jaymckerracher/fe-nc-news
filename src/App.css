@@ -32,7 +32,7 @@ body {
     border-radius: 15px;
     width: 400px;
     position: fixed;
-    top: 100px;
+    bottom: 100px;
     left: 0;
     right: 0;
     margin: auto;
@@ -192,6 +192,24 @@ footer {
     text-align: center;
 }
 
+#profile-redirect {
+    text-align: center;
+}
+
+.profile-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-left {
+    text-align: right;
+    padding: 0 20px;
+}
+
+.profile-right {
+    padding: 0 20px;
+}
+
 /* SignIn */
 .signin-card{
     text-align: center;
@@ -206,7 +224,7 @@ footer {
     border-radius: 15px;
 }
 
-.signin-card button {
+.sign-button {
     font-size: 1rem;
     display: block;
     margin: auto;
@@ -217,11 +235,11 @@ footer {
     cursor: pointer;
 }
 
-.signin-card form button:active {
+.sign-button:active {
     border: solid 2px orange;
     box-shadow: 0 0 10px 1px orange, inset 0 0 10px 1px orange;
 }
 
-.return-home {
+.redirect-link {
     text-decoration: underline;
 }
