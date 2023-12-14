@@ -153,10 +153,10 @@ footer {
     align-items: center;
 }
 
-.like-container-comment {
-    width: 55px;
+.like-delete-container-comment {
     display: flex;
     justify-content: space-between;
+    margin: auto;
     align-items: center;
 }
 

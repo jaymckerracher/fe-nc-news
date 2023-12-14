@@ -14,7 +14,7 @@ function CommentsList ({commentsList, setCommentsList, isCommentsLoading, articl
                 <ul>
                     {commentsList.map(comment => {
                         return <li key={comment.comment_id}>
-                            <CommentCard comment={comment}/>
+                            <CommentCard comment={comment} setCommentsList={setCommentsList} commentsList={commentsList}/>
                         </li>
                     })}
                 </ul>

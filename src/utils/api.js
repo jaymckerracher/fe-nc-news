@@ -54,4 +54,12 @@ function postComment (article_id, username, body) {
         })
 }
 
-export { getArticleById, getArticles, getCommentsByArticle, patchArticleVotes, getUsers, postComment };
+function deleteComment (comment_id) {
+    return axios
+        .delete(`https://jay-mckerracher-nc-news.onrender.com/api/comments/${comment_id}`)
+        .then(res => {
+            return res
+        })
+}
+
+export { getArticleById, getArticles, getCommentsByArticle, patchArticleVotes, getUsers, postComment, deleteComment };

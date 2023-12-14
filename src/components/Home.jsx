@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react'
-
+import { useState, useEffect, useContext } from 'react'
 import { getArticles } from '../utils/api';
 
 import ArticlesList from "./ArticlesList";
