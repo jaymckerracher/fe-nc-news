@@ -1,4 +1,5 @@
 import CommentCard from "./CommentCard"
+import CommentAdder from "./CommentAdder";
 
 function CommentsList ({commentsList, isCommentsLoading}) {
     if(isCommentsLoading) {
@@ -6,13 +7,16 @@ function CommentsList ({commentsList, isCommentsLoading}) {
     }
     else {
         return (
-            <ul>
-                {commentsList.map(comment => {
-                    return <li key={comment.comment_id}>
-                        <CommentCard comment={comment}/>
-                    </li>
-                })}
-            </ul>
+            <>
+                <CommentAdder/>
+                <ul>
+                    {commentsList.map(comment => {
+                        return <li key={comment.comment_id}>
+                            <CommentCard comment={comment}/>
+                        </li>
+                    })}
+                </ul>
+            </>
         )
     }
 }

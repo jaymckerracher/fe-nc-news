@@ -5,7 +5,6 @@ import { getArticleById, getCommentsByArticle } from "../utils/api";
 
 import SingleArticleCard from "./SingleArticleCard";
 import CommentsList from "./CommentsList";
-import CommentAdder from "./CommentAdder";
 
 function Article () {
     const {article_id} = useParams();
@@ -35,7 +34,6 @@ function Article () {
         <>
             <SingleArticleCard article={article} isArticleLoading={isArticleLoading}/>
             <CommentsList commentsList={commentsList} isCommentsLoading={isCommentsLoading}/>
-            <CommentAdder />
         </>
     )
 }

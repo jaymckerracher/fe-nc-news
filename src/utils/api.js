@@ -34,4 +34,12 @@ function patchArticleVotes (article_id, newVote) {
         })
 }
 
-export { getArticleById, getArticles, getCommentsByArticle, patchArticleVotes };
+function getUsers () {
+    return axios
+        .get('https://jay-mckerracher-nc-news.onrender.com/api/users')
+        .then(res => {
+            return res.data.users
+        })
+}
+
+export { getArticleById, getArticles, getCommentsByArticle, patchArticleVotes, getUsers };

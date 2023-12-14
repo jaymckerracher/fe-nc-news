@@ -10,6 +10,7 @@
 
 body {
     background-color: #22272C;
+    margin: 115px 0;
 }
 
 .icon {
@@ -59,13 +60,14 @@ body {
 /* Header */
 .app-header {
     height: 90px;
+    width: 100%;
     background-color: #2E343C;
     border-bottom: #22272C solid 3px;
     border-radius: 0 0 15px 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: sticky;
+    position: fixed;
     top: 0;
 }
 
@@ -101,8 +103,15 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: sticky;
+    position: fixed;
     bottom: 0;
+}
+
+.footer-icons {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* ArticleCard */
@@ -155,4 +164,64 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+/* CommentAdder */
+.comment-form {
+    text-align: center;
+}
+
+.comment-form label {
+    display: block;
+}
+
+.comment-form textarea {
+    display: block;
+    color: black;
+    background-color: #fdfcf7;
+    border-radius: 15px;
+    min-width: 80%;
+    max-width: 80%;
+    min-height: 100px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+/* Profile */
+.profile-card h2{
+    text-align: center;
+}
+
+/* SignIn */
+.signin-card{
+    text-align: center;
+}
+
+.signin-card input {
+    margin: 20px 10px;
+    background-color: #fdfcf7;
+    color: black;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.signin-card button {
+    font-size: 1rem;
+    display: block;
+    margin: auto;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 15px;
+    border: solid 2px #fdfcf7;
+    cursor: pointer;
+}
+
+.signin-card form button:active {
+    border: solid 2px orange;
+    box-shadow: 0 0 10px 1px orange, inset 0 0 10px 1px orange;
+}
+
+.return-home {
+    text-decoration: underline;
 }
