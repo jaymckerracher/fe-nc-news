@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from 'react'
 import { getArticles } from '../utils/api';
 
 import ArticlesList from "./ArticlesList";
+import QuerySelector from './QuerySelector';
 
 function Home () {
     const [articlesRequest, setArticlesRequest] = useState('https://jay-mckerracher-nc-news.onrender.com/api/articles')
@@ -17,7 +18,10 @@ function Home () {
     }, [])
 
     return (
-        <ArticlesList articlesList={articlesList} isLoading={isLoading}/>
+        <>
+            <QuerySelector />
+            <ArticlesList articlesList={articlesList} isLoading={isLoading}/>
+        </>
     )
 }
 

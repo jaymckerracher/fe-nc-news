@@ -243,3 +243,12 @@ footer {
 .redirect-link {
     text-decoration: underline;
 }
+
+/* QuerySelector */
+.query-selector {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    align-items: center;
+}
