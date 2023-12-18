@@ -235,9 +235,9 @@ footer {
     cursor: pointer;
 }
 
-.sign-button:active {
-    border: solid 2px orange;
-    box-shadow: 0 0 10px 1px orange, inset 0 0 10px 1px orange;
+.sign-button:hover {
+    border: solid 2px pink;
+    box-shadow: 0 0 10px 2px pink, inset 0 0 10px 2px pink;
 }
 
 .redirect-link {
@@ -246,9 +246,40 @@ footer {
 
 /* QuerySelector */
 .query-selector {
-    width: 70%;
+    width: 300px;
     display: flex;
     justify-content: space-between;
-    margin: auto;
+    margin: 0 auto 10px auto;
     align-items: center;
+}
+
+.query-options-container {
+    border: 2px white solid;
+    border-radius: 15px;
+    width: 387px;
+    margin: auto;
+    text-align: center;
+}
+
+.query-options-container hr {
+    margin-top: 10px;
+}
+
+.query-option {
+    width: 60%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.query-options-container p {
+    padding: 10px 0;
+    border-bottom: 2px solid white;
+    width: 50%;
+    margin: auto;
+}
+
+.query-option label {
+    margin: auto;
 }

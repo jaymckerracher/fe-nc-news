@@ -2,26 +2,23 @@ import { useState, useEffect, useContext } from 'react'
 import { getArticles } from '../utils/api';
 
 import ArticlesList from "./ArticlesList";
-import QuerySelector from './QuerySelector';
 
 function Home () {
     const [articlesRequest, setArticlesRequest] = useState('https://jay-mckerracher-nc-news.onrender.com/api/articles')
     const [articlesList, setArticlesList] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const params = {}
 
     useEffect(() => {
-        getArticles(articlesRequest)
+        getArticles(articlesRequest, params)
             .then(body => {
                 setArticlesList(body)
                 setIsLoading(false)
         })
-    }, [])
+    }, [articlesRequest, params])
 
     return (
-        <>
-            <QuerySelector />
-            <ArticlesList articlesList={articlesList} isLoading={isLoading}/>
-        </>
+        <ArticlesList articlesList={articlesList} isLoading={isLoading} params={params}/>
     )
 }
 

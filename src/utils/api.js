@@ -1,6 +1,6 @@
 import axios from "axios"
 
-function getArticles (url) {
+function getArticles (url, params) {
     return axios
         .get(url)
         .then(res => {
