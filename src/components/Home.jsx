@@ -7,7 +7,7 @@ function Home () {
     const [articlesRequest, setArticlesRequest] = useState('https://jay-mckerracher-nc-news.onrender.com/api/articles')
     const [articlesList, setArticlesList] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-    const params = {}
+    const [params, setParams] = useState({})
 
     useEffect(() => {
         getArticles(articlesRequest, params)
@@ -15,10 +15,14 @@ function Home () {
                 setArticlesList(body)
                 setIsLoading(false)
         })
+        .catch(() => {
+            setArticlesList([])
+            setIsLoading(false)
+        })
     }, [articlesRequest, params])
 
     return (
-        <ArticlesList articlesList={articlesList} isLoading={isLoading} params={params}/>
+        <ArticlesList articlesList={articlesList} isLoading={isLoading} setParams={setParams} />
     )
 }
 

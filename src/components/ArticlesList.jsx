@@ -1,13 +1,15 @@
 import ArticleCard from "./ArticleCard"
 import QuerySelector from './QuerySelector';
 
-function ArticlesList ({articlesList, isLoading, params}) {
+function ArticlesList ({articlesList, isLoading, setParams}) {
     if(isLoading) {
-        return <p className="loading">Loading...</p>
+        return <p className="notification">Loading...</p>
     }
+    
     return (
         <>
-            <QuerySelector params={params}/>
+            <QuerySelector setParams={setParams}/>
+            {articlesList.length ?
             <ul>
                 {articlesList.map(article => {
                     return <li key={article.article_id}>
@@ -15,6 +17,7 @@ function ArticlesList ({articlesList, isLoading, params}) {
                     </li>
                 })}
             </ul>
+            : <p className="notification">Something went wrong!</p>}
         </>
     )
 }

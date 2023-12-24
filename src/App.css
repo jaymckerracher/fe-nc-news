@@ -18,7 +18,7 @@ body {
     font-size: 1.5em;
 }
 
-.loading {
+.notification {
     display: block;
     text-align: center;
     margin: 10px;
@@ -249,7 +249,7 @@ footer {
     width: 300px;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto 10px auto;
+    margin: auto;
     align-items: center;
 }
 
@@ -257,29 +257,50 @@ footer {
     border: 2px white solid;
     border-radius: 15px;
     width: 387px;
+    margin: 20px auto 0;
+    padding: 5px 0;
+}
+
+.query-options-container button {
+    margin: 10px auto;
+}
+
+.query-options-container hr {
+    margin: 10px 0;
+}
+
+.options-box {
+    width: 55%;
+    margin: auto;
+}
+
+.options-box p {
+    text-align: center;
+}
+
+.options-box * {
+    padding: 5px 0;
+}
+
+.query-option input {
+    margin-right: 10px;
+}
+
+.options-box-text * {
+    padding: 5px 0;
+}
+
+.options-box-text {
+    width: 70%;
     margin: auto;
     text-align: center;
 }
 
-.query-options-container hr {
-    margin-top: 10px;
-}
-
-.query-option {
-    width: 60%;
-    margin: 10px auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.query-options-container p {
-    padding: 10px 0;
-    border-bottom: 2px solid white;
-    width: 50%;
-    margin: auto;
-}
-
-.query-option label {
-    margin: auto;
+.options-box-text input {
+    background-color: #fdfcf7;
+    color: black;
+    padding: 10px;
+    border-radius: 15px;
+    width: 100%;
+    text-align: center;
 }
