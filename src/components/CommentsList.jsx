@@ -6,7 +6,7 @@ import InvalidPath from "./InvalidPath";
 
 function CommentsList ({commentsList, setCommentsList, isCommentsLoading, article_id}) {
     if(isCommentsLoading) {
-        return <p className="loading">Comments Loading...</p>
+        return <p className="notification">Comments Loading...</p>
     }
     else if (!commentsList.length) {
         return <></>
