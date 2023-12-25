@@ -312,3 +312,12 @@ footer {
     margin: auto;
     width: 80%;
 }
+
+/* Invalid */
+.invalid {
+    text-align: center;
+}
+
+.invalid-link {
+    text-decoration: underline;
+}

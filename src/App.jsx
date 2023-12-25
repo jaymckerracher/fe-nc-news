@@ -9,6 +9,7 @@ import Article from './components/Article'
 import Error from './components/Error'
 import Profile from './components/Profile'
 import SignIn from './components/SignIn'
+import InvalidPath from './components/InvalidPath'
 
 function App() {
   const {errorClass, setErrorClass} = useState('error-container hide-error')
@@ -22,6 +23,7 @@ function App() {
         <Route path='/articles/:article_id' element={<Article />}/>
         <Route path='/profile' element={<Profile/>}></Route>
         <Route path='/login' element={<SignIn />}></Route>
+        <Route path='*' element={<InvalidPath />}></Route>
       </Routes>
       <Footer />
     </>
