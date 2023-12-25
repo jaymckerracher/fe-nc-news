@@ -24,6 +24,10 @@ body {
     margin: 10px;
 }
 
+ul {
+    list-style-type: none;
+}
+
 /* Error */
 .error-container {
     z-index: 1;
