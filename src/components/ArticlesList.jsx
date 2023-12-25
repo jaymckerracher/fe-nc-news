@@ -17,7 +17,7 @@ function ArticlesList ({articlesList, isLoading, setParams}) {
                     </li>
                 })}
             </ul>
-            : <p className="notification">Something went wrong!</p>}
+            : <p className="notification">There are no articles that match your search!</p>}
         </>
     )
 }

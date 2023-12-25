@@ -23,7 +23,7 @@ function App() {
         <Route path='/articles/:article_id' element={<Article />}/>
         <Route path='/profile' element={<Profile/>}></Route>
         <Route path='/login' element={<SignIn />}></Route>
-        <Route path='*' element={<InvalidPath />}></Route>
+        <Route path='*' element={<InvalidPath message="This page doesn't exist!"/>}></Route>
       </Routes>
       <Footer />
     </>

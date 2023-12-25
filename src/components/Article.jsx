@@ -21,12 +21,20 @@ function Article () {
                 setArticle(body)
                 setIsArticleLoading(false)
         })
+        .catch(() => {
+            setArticle({})
+            setIsArticleLoading(false)
+        })
     }, [])
 
     useEffect(() => {
         getCommentsByArticle(article_id)
             .then(body => {
                 setCommentsList(body)
+                setIsCommentsLoading(false)
+            })
+            .catch(() => {
+                setCommentsList([])
                 setIsCommentsLoading(false)
             })
     }, [user])
