@@ -107,35 +107,37 @@ function QuerySelector ({setParams}) {
             <div className='query-options-container'>
                 <div className='options-box-text'>
                     <p>Filter by {filterField}:</p>
-                    <input type="text" id='filter-value' value={filterValue} placeholder='What would you like to filter by?' onChange={(event) => {
+                    <input type="text" id='filter-value' value={filterValue} placeholder={`Specify ${filterField}...`} onChange={(event) => {
                         setFilterValue(event.target.value)
                     }}/>
                 </div>
-                <button className='sign-button' onClick={(event) => {
-                    event.preventDefault();
-                    if (filterField && !filterValue) {
-                        setErrorMessage(`Please enter a valid ${filterField}`)
-                        setErrorClass("error-container show-error")
-                        setTimeout(() => {
-                            setErrorClass("error-container hide-error")
-                        } ,10000)
-                    }
-                    else {
+                <div className='filter-button-container'>
+                    <button className='sign-button' onClick={(event) => {
+                        event.preventDefault();
+                        if (filterField && !filterValue) {
+                            setErrorMessage(`Please enter a valid ${filterField}`)
+                            setErrorClass("error-container show-error")
+                            setTimeout(() => {
+                                setErrorClass("error-container hide-error")
+                            } ,10000)
+                        }
+                        else {
+                            setParams({
+                                sort_by: sortByValue,
+                                order: orderValue,
+                                [filterField]: filterValue 
+                            })
+                        }
+                    }}>Edit Search</button>
+                    <button className='sign-button' onClick={() => {
+                        setFilterField('')
+                        setFilterValue('')
                         setParams({
                             sort_by: sortByValue,
-                            order: orderValue,
-                            [filterField]: filterValue 
+                            order: orderValue
                         })
-                    }
-                }}>Edit Search</button>
-                <button className='sign-button remove-filter-button' onClick={() => {
-                    setFilterField('')
-                    setFilterValue('')
-                    setParams({
-                        sort_by: sortByValue,
-                        order: orderValue
-                    })
-                }}>Remove Filter</button>
+                    }}>Remove Filter</button>
+                </div>
             </div>
             : null
             }

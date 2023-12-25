@@ -304,3 +304,11 @@ footer {
     width: 100%;
     text-align: center;
 }
+
+.filter-button-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    width: 80%;
+}
